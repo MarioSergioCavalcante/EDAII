@@ -22,3 +22,6 @@ int main(){
     cout <<"Ponto C = " << c.x <<" , " << c.y << endl;
     return 0;
 }
+
+// Utilizem a struct ponto para calcular a distancia entre dois
+// pontos no eixo catesiano; 
