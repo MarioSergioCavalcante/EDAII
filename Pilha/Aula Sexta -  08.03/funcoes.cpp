@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdlib>
-#define TAM 5  //macro de definição
+#define TAM 100 //macro de definição
 using namespace std;
 
 int estaVazia(int topo){
@@ -39,20 +39,13 @@ void push(char *pilha,  int *topo, char dado){
     pilha[(*topo)] = dado;
     cout << "O dado: " << dado << " foi adicionado a minha pilha" << endl;
 }
-int main(){
-    system("cls");
-    char pilha[TAM];
-    int topo = -1; //Guarda a posição do meu vetor que é o topo da pilha;
-    push(pilha, &topo, 'a');
-    push(pilha, &topo, 'b');
-    push(pilha, &topo, 'c');
-    push(pilha, &topo, 'd');
-    push(pilha, &topo, 'e');
-    push(pilha, &topo, 'f');
-    
-    
-    
-    print(pilha, topo);
-    
-    return 0;
+
+char pop(char *pilha, int *topo){
+    if(estaVazia(*topo)){
+        cout << "Pilha Vazia";
+        return 'E';
+    }
+    char value = pilha[(*topo)];
+    (*topo)--;
+    return value;
 }

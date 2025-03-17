@@ -7,6 +7,8 @@ int isEmpty(int topo){
         return 1;
     }
     return 0;
+    int idade_aluno; // matricula_aluno 
+    //idadeAluno
 }
 int isFull(int topo){
     if(topo == (TAM - 1)){
