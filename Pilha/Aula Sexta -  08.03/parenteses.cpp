@@ -9,7 +9,6 @@ int main(){
     char equacao[TAM];
     cout << "Digite a equacao: ";
     cin >> equacao;
-
    for(int i = 0; i < strlen(equacao);i++){
         if(equacao[i] == '('){
             push(parenteses, &topo, '(');

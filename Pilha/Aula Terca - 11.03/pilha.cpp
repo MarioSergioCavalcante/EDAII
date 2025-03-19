@@ -39,6 +39,20 @@ void push(char *pilha,  int *topo, char dado){
     pilha[(*topo)] = dado;
     cout << "O dado: " << dado << " foi adicionado a minha pilha" << endl;
 }
+
+char pop(char* pilha, int *topo){
+    if(estaVazia(*topo)){ //Verificar se a pilha está vazia!
+        cout << "A pilha está vazia!\n";//Se tiver, imprimir uma mensagem dizendo que a pilha está vazia
+        return 'E';  //Informa 'E', caso haja um erro na retirada de um elemento
+    }
+    //Senão, criar uma variável auxiliar, que vai guardar o topo da pilha;
+    char aux = pilha[(*topo)];
+    //Dimininuir o topo da pilha
+    (*topo) = (*topo) - 1;
+    //Retornar a variável auxiliar.
+    return aux;
+}
+
 int main(){
     system("cls");
     char pilha[TAM];
@@ -53,6 +67,9 @@ int main(){
     
     
     print(pilha, topo);
-    
+    cout << "O elemento retirado foi: " << pop(pilha, &topo) << endl;
+    print(pilha, topo);
+    push(pilha, &topo, 'f');
+    print(pilha, topo);
     return 0;
 }
